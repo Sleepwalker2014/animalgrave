@@ -4,12 +4,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { SpeakerListPage } from './speaker-list';
 import { SpeakerListPageRoutingModule } from './speaker-list-routing.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    SpeakerListPageRoutingModule
+    SpeakerListPageRoutingModule,
+    FormsModule
   ],
   declarations: [SpeakerListPage],
 })

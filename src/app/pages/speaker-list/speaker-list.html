@@ -15,7 +15,20 @@
   </ion-header>
 
   <ion-grid fixed>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Geboren am</ion-label>
+      <ion-datetime [(ngModel)]="selectedDate" (ionChange)="onChangeDate(selectedDate)"> displayFormat="DD/MM/YYYY" value="2012-12-15T13:47:20.789"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gestorben am</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" value="2012-12-15T13:47:20.789"></ion-datetime>
+    </ion-item>
     <ion-row>
+
       <ion-col size="12" size-md="6" *ngFor="let speaker of speakers">
         <ion-card class="speaker-card">
           <ion-card-header>
@@ -25,7 +38,9 @@
               </ion-avatar>
               <ion-label>
                 <h2>{{speaker.name}}</h2>
-                <p>{{speaker.title}}</p>
+                <p><ion-icon name="star"></ion-icon>
+                  {{speaker.born}}</p>
+                <p><ion-icon name="rose"></ion-icon> 17.02.2021</p>
               </ion-label>
             </ion-item>
           </ion-card-header>
@@ -39,9 +54,7 @@
               </ion-item>
 
               <ion-item detail="false" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
-                <ion-label>
-                  <h3>About {{speaker.name}}</h3>
-                </ion-label>
+
               </ion-item>
             </ion-list>
           </ion-card-content>
