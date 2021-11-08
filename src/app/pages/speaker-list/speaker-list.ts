@@ -21,12 +21,11 @@ export class SpeakerListPage {
 
   onChangeDate(value) {
     this.selectedDate = value;
-    const dateString = new Date(Date.parse(this.selectedDate)).getDate();
 
     this.speakers = this.getSpeakers().filter(object => {
-      console.log(object.born);
-      console.log(dateString);
-      return object.born == dateString;
+      console.log(new Date(object.born).getTime());
+console.log(new Date(new Date(this.selectedDate)));
+      return object.born == value;
     });
   }
 
