@@ -20,7 +20,7 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Speakers',
+      title: 'Tiere',
       url: '/app/tabs/speakers',
       icon: 'people'
     },
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       icon: 'map'
     },
     {
-      title: 'About',
+      title: 'Über uns',
       url: '/app/tabs/about',
       icon: 'information-circle'
     }
